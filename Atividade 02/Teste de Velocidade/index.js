@@ -1,5 +1,6 @@
 const nome01 = prompt("Qual o nome do primeiro Veiculo:")
 const velocidade01 = prompt("Qual a Velocidade do Veiculo?")
+
 const nome02 = prompt("Qual o nome do segundo Veiculo?")
 const velocidade02 = prompt("Qual a Velocidade do Veiculo?")
 
