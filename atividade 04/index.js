@@ -9,4 +9,3 @@ while (visitou === 'Sim') {
   array.push(cidade)
   visitou = prompt("Você visitou alguma cidade? (Sim/Não)")  
 }
-nu
