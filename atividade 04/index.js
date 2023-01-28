@@ -1,8 +1,13 @@
 const nome = prompt("Qual seu nome?")
-const visitou = prompt("Você visitou alguma cidade? (Sim/Não)")
+let visitou = prompt("Você visitou alguma cidade? (Sim/Não)")
 
-var cidade = prompt("Qual o nome da cidade?")
+let cidades = []
+
 
 while (visitou === 'Sim') {
-
+  var cidade = prompt("Qual o nome da cidade?")
+  cidades.push(cidade)
+  visitou = prompt("Você visitou mais alguma cidade? (Sim/Não)")  
 }
+
+alert(nome + " Visitou " + cidades.length + " Cidades, sendo elas: " + cidades)
