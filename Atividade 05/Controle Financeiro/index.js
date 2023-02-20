@@ -38,6 +38,7 @@ saldo = parseFloat(saldo)
 let opcao = ""
 
 do {
+    
     opcao = prompt(
         "Saldo Disponivel: R$ " + saldo +
         "\n1. Adicionar dinheiro" +
@@ -58,4 +59,5 @@ do {
         default:
             alert("Entrada inválida!")
     }
+
 } while (opcao !== "3")
