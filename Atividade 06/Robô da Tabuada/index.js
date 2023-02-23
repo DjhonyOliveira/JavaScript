@@ -17,7 +17,7 @@ function tabuada(){
         "\n7 x " + valor + "= " + resultado[6] + 
         "\n8 x " + valor + "= " + resultado[7] + 
         "\n9 x " + valor + "= " + resultado[8] + 
-        "\n10 x " + valor + "= " + resultado[9] + 
+        "\n10 x " + valor + "= " + resultado[9] +
         "\n11 x " + valor + "= " + resultado[10] +
         "\n12 x " + valor + "= " + resultado[11] + 
         "\n13 x " + valor + "= " + resultado[12] +
