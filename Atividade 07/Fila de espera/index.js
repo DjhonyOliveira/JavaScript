@@ -1,4 +1,6 @@
-function cadastro() {
+const cadastro = document.querySelector(".cadastrar")
+
+cadastro.addEventListener('click', ()=>{
 
     var nome = document.querySelector(".name").value
     var idade = document.querySelector(".age").value
@@ -12,14 +14,18 @@ function cadastro() {
    pacientes.push(peso)
    pacientes.push(altura)
 
-    console.log(pacientes)
+   const consultar = document.querySelector(".consultar");
+       consultar.addEventListener('click', () =>{
 
-    const consultar = document.querySelector(".consultar");
-    
-    consultar.addEventListener('click', () =>{
-        alert(pacientes)
-    })
+   })
 
-}
+
+
+
+
+})
+
+
+
 
 
