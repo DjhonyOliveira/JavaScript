@@ -9,6 +9,13 @@
     box-sizing: border-box;
 }
 
+.buttons {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+    gap: 10vh;
+}
+
 body {
     background-image: url(./19366.jpg);
     background-repeat: no-repeat;
