@@ -9,6 +9,7 @@
     box-sizing: border-box;
 }
 
+
 .buttons {
     display: flex;
     margin-top: 50px;
@@ -16,14 +17,33 @@
     gap: 10vh;
 }
 
+.container.paciente {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgb(55, 55, 235, 0.2);
+    padding: 3%;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+
+.input-group-text {
+    color: var(--secundary-color)!important;
+    background-color: var(--primary-color)!important;
+}
+
+
 body {
     background-image: url(./resources/19366.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
+header, label, .content {
+    font-family: 'Shantell Sans', cursive;
+}
 
-.input-group-text {
-    color: var(--secundary-color)!important;
-    background-color: var(--primary-color)!important;
+label {
+    text-decoration: underline black;
 }

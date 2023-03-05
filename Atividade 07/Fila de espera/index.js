@@ -1,4 +1,8 @@
 const cadastro = document.querySelector(".cadastrar")
+const consultar = document.querySelector(".consultar");
+const paci = document.querySelector(".paciente")
+
+var pacientes = []
 
 cadastro.addEventListener('click', ()=>{
 
@@ -11,25 +15,22 @@ cadastro.addEventListener('click', ()=>{
 
 })
 
-var pacientes = []
-
-const consultar = document.querySelector(".consultar");
-const paci = document.querySelector(".paciente")
-
 consultar.addEventListener('click', () =>{
 
     let dadosPaciente = (
-        '<div class="pacienteNome">Nome: ' + pacientes[0] + '</div>' +
-        '<div class="idadePaciente">Idade: ' + pacientes[1] + '</div>' +
-        '<div class="pesoPaciente">Peso: ' + pacientes[2] + '</div>' + 
-        '<div class="alturaPaciente">Altura: ' + pacientes[3] + '</div>'
+        '<div class="content">' +
+            '<div class="pacienteNome">Nome: ' + pacientes[0] + '</div>' +
+            '<div class="idadePaciente">Idade: ' + pacientes[1] + '</div>' +
+            '<div class="pesoPaciente">Peso: ' + pacientes[2] + '</div>' + 
+            '<div class="alturaPaciente">Altura: ' + pacientes[3] + '</div>' +
+        '</div>'
     )
 
-    paci.innerHTML = dadosPaciente
 
     for ( let i = 1; i <= 4; i++) {
         pacientes.shift()
     }
+
 })
 
 
