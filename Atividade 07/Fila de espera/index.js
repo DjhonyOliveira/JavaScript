@@ -7,22 +7,29 @@ cadastro.addEventListener('click', ()=>{
     var peso = document.querySelector(".weight").value
     var altura = document.querySelector(".height").value
 
-    let pacientes = []
+    pacientes.push(nome, idade, peso, altura)
 
-   pacientes.push(nome)
-   pacientes.push(idade)
-   pacientes.push(peso)
-   pacientes.push(altura)
+})
 
-   const consultar = document.querySelector(".consultar");
-       consultar.addEventListener('click', () =>{
+var pacientes = []
 
-   })
+const consultar = document.querySelector(".consultar");
+const paci = document.querySelector(".paciente")
 
+consultar.addEventListener('click', () =>{
 
+    let dadosPaciente = (
+        '<div class="pacienteNome">Nome: ' + pacientes[0] + '</div>' +
+        '<div class="idadePaciente">Idade: ' + pacientes[1] + '</div>' +
+        '<div class="pesoPaciente">Peso: ' + pacientes[2] + '</div>' + 
+        '<div class="alturaPaciente">Altura: ' + pacientes[3] + '</div>'
+    )
 
+    paci.innerHTML = dadosPaciente
 
-
+    for ( let i = 1; i <= 4; i++) {
+        pacientes.shift()
+    }
 })
 
 
