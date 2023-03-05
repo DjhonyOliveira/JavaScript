@@ -26,6 +26,7 @@ consultar.addEventListener('click', () =>{
         '</div>'
     )
 
+    paci.innerHTML = dadosPaciente
 
     for ( let i = 1; i <= 4; i++) {
         pacientes.shift()
