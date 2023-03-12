@@ -26,7 +26,11 @@ consultar.addEventListener('click', () =>{
         '</div>'
     )
 
-    paci.innerHTML = dadosPaciente
+    if (pacientes.length > 0) {
+        paci.innerHTML = dadosPaciente
+    } else {
+        alert("Todos os pacientes já consultados!")
+    }
 
     for ( let i = 1; i <= 4; i++) {
         pacientes.shift()
