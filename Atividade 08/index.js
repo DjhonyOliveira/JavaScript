@@ -20,14 +20,28 @@ do {
         case "1" :
 
             if (imoveis.length > 0) {
-
+                alert("temos os seguintes imoveis desponiveis: " + imoveis[0])
             } else {
                 alert("Não temos imoveis registrados até o momento")
             }
 
             break
         case "2" :
-            
+
+            const novoImovel = []
+
+            const nome = prompt("Informe o Nome do proprietário:")
+            const quarto = prompt("Quantos quartos possui?")
+            const banheiro = prompt("Quantos banheiros possui?")
+            const garagem = prompt("Possui garragem?")
+
+            novoImovel.push(nome, quarto,banheiro,garagem)
+            imoveis.push(novoImovel)
+
+            // for (let i = 1; i <= 4; i++ ) {
+            //     novoImovel.shift()
+            // }
+
             break
         case "3" :
             alert("Serviço Encerado...")        
@@ -37,5 +51,5 @@ do {
     }
 
 
-} while (menu !== 3)
+} while (menu != 3)
     
