@@ -10,4 +10,4 @@ Escreva um programa em javascript que funcione como um cadastro de imóveis e at
     - Quantidade de quartos.
     - Quantidade de banheiros.
     - Se possui garagem.
-- O menu também deve ter a opção de mostrar todos os imóveis salvos.
+- O menu também deve ter a opção de mostrar todos os imóveis salvos.    
