@@ -43,7 +43,7 @@ do {
             break
         case "2" :
             if (imoveis.length > 0) {
-               for(let i = 0; i < imoveis.length; i++) {
+               for (let i = 0; i < imoveis.length; i++) {
                     alert(
                         "imovel:" + (i + 1) +
                         "\nProprietário: " + imoveis[i].nome +
