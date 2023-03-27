@@ -1,8 +1,10 @@
 const cadastro = document.querySelector(".cadastrar")
 const consultar = document.querySelector(".consultar");
+const consultados = document.querySelector(".consultados");
 const paci = document.querySelector(".paciente")
 
-var pacientes = []
+let pacientes = []
+let pacientesConsultados = []
 
 cadastro.addEventListener('click', ()=>{
 
@@ -26,15 +28,34 @@ consultar.addEventListener('click', () =>{
         '</div>'
     )
 
+
     if (pacientes.length > 0) {
+        
         paci.innerHTML = dadosPaciente
+        
+        let consultados = {}
+        consultados.nome = pacientes[0]
+        consultados.idade = pacientes[1]
+        consultados.peso = pacientes[2]
+        consultados.altura = pacientes[3]
+    
+        pacientesConsultados.push(consultados)
+
     } else {
+
         alert("Todos os pacientes já consultados!")
+
     }
 
+   
+
     for ( let i = 1; i <= 4; i++) {
-        pacientes.shift()
+        pacientes.shift(consultados)
     }
+
+})
+
+consultados.addEventListener('click', () =>{
 
 })
 
