@@ -65,9 +65,13 @@ consultar.addEventListener('click', () =>{
 })
 
 consultados.addEventListener('click', ()=> {
+
     for (let i = 0; i <= pacientesConsultados.length; i++) {
          var paciConsultados = (
-            '<div class="consultado">' + pacientesConsultados[i] + '</div>'
+            '<div class="consultado">' + pacientesConsultados[i].nome + '</div>' +
+            '<div class="consultado">' + pacientesConsultados[i].idade + '</div>' +
+            '<div class="consultado">' + pacientesConsultados[i].peso + '</div>' +
+            '<div class="consultado">' + pacientesConsultados[i].altura + '</div>'
         )
     }
 
