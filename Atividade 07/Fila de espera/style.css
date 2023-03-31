@@ -17,7 +17,7 @@
     gap: 10vh;
 }
 
-.container.paciente {
+.container.pacientes {
     display: flex;
     flex-direction: column;
     justify-content: center;

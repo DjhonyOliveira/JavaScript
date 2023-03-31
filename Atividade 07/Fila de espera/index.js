@@ -23,16 +23,16 @@ consultar.addEventListener('click', () =>{
     let dadosPaciente = (
         '<div class="content">' +
             '<div class="pacienteNome">' + 
-                '<p>Nome: ' + pacientes[0] + '</p>' +
+                '<p><b>Nome:</b> ' + pacientes[0] + '</p>' +
             '</div>' +
             '<div class="idadePaciente">' +
-                '<p>Idade: ' + pacientes[1] + '</p>' +
+                '<p><b>Idade:</b> ' + pacientes[1] + '</p>' +
             '</div>' +
             '<div class="pesoPaciente">' + 
-                '<p>Peso: ' + pacientes[2] + '</p>' + 
+                '<p><b>Peso:</b> ' + pacientes[2] + '</p>' + 
             '</div>' + 
             '<div class="alturaPaciente">' +
-                '<p>Altura: ' + pacientes[3] + '</p>' + 
+                '<p><b>Altura:</b> ' + pacientes[3] + '</p>' + 
             '</div>' +
         '</div>'
     )
@@ -66,17 +66,17 @@ consultar.addEventListener('click', () =>{
 
 consultados.addEventListener('click', ()=> {
 
-    for (let i = 0; i <= pacientesConsultados.length; i++) {
-         var paciConsultados = (
-            '<div class="consultado">' + pacientesConsultados[i].nome + '</div>' +
-            '<div class="consultado">' + pacientesConsultados[i].idade + '</div>' +
-            '<div class="consultado">' + pacientesConsultados[i].peso + '</div>' +
-            '<div class="consultado">' + pacientesConsultados[i].altura + '</div>'
-        )
-    }
+        for (let i = 0; i <= pacientesConsultados.length; i++){
+            var paciConsultados = (
+                '<div class="consultado nomeConsultado">' + pacientesConsultados[i].nome + '</div>' +
+                '<div class="consultado idadeConsultado">' + pacientesConsultados[i].idade + '</div>' +
+                '<div class="consultado pesoConsultado">' + pacientesConsultados[i].peso + '</div>' +
+                '<div class="consultado alturaConsultado">' + pacientesConsultados[i].altura + '</div>'
+            )
+        }
 
     consult.innerHTML = paciConsultados
-})
+});
 
 
 
