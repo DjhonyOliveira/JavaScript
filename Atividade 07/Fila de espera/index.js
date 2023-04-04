@@ -67,19 +67,19 @@ consultar.addEventListener('click', () =>{
 
 consultados.addEventListener('click', ()=> {
 
-    var nomes = pacientesConsultados.map(function(pessoaNome) {
+    let nomes = pacientesConsultados.map(function(pessoaNome) {
         return pessoaNome.nome
     })
 
-    var idades = pacientesConsultados.map(function(pessoaIdade){
+    let idades = pacientesConsultados.map(function(pessoaIdade){
         return pessoaIdade.idade
     })
       
-    var pesos = pacientesConsultados.map(function(pessoaPeso){
+    let pesos = pacientesConsultados.map(function(pessoaPeso){
         return pessoaPeso.peso
     })
 
-    var alturas = pacientesConsultados.map(function(pessoaAltura){
+    let alturas = pacientesConsultados.map(function(pessoaAltura){
         return pessoaAltura.altura
     })
 
@@ -90,23 +90,24 @@ consultados.addEventListener('click', ()=> {
         var alturaPacientes = alturas[i]
     }
 
-    var paciConsultados = (
-        '<div class="content">'  +
-            '<h3 class="text-center mt-3" style="color: #0d6efd">Pacientes já consultados:</h3>' +
-            '<div class="consultado nomeConsultado text-center mt-5">' +
-                '<p><b>Nome: </b>' + nomePacientes + '</p>' +
-            '</div>' +
-            '<div class="consultado idadeConsultado text-center">' +
-                '<p><b>Idade: </b>' + idadePacientes + '</p>' +
-            '</div>' +
-            '<div class="consultado pesoConsultado text-center">' +
-                '<p><b>Peso: </b>' + pesoPacientes + '</p>' +
-            '</div>' +
-            '<div class="consultado alturaConsultado text-center">' + 
-                '<p><b>Altura: </b>' +alturaPacientes + '</p>' +
-            '</div>' +
-        '</div>'
-    )
+    
+        var paciConsultados = (
+            '<div class="content">'  +
+                '<h3 class="text-center mt-3" style="color: #0d6efd">Pacientes já consultados:</h3>' +
+                '<div class="consultado nomeConsultado text-center mt-5">' +
+                    '<p><b>Nome: </b>' + nomePacientes + '</p>' +
+                '</div>' +
+                '<div class="consultado idadeConsultado text-center">' +
+                    '<p><b>Idade: </b>' + idadePacientes + '</p>' +
+                '</div>' +
+                '<div class="consultado pesoConsultado text-center">' +
+                    '<p><b>Peso: </b>' + pesoPacientes + '</p>' +
+                '</div>' +
+                '<div class="consultado alturaConsultado text-center">' + 
+                    '<p><b>Altura: </b>' +alturaPacientes + '</p>' +
+                '</div>' +
+            '</div>'
+        )
 
     consult.innerHTML = paciConsultados
 
