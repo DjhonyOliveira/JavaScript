@@ -43,7 +43,24 @@ function listasVagas() {
 }
 
 function visualizarVaga(i) {
-    // const
+
+    // revalidar, esta pegando incoreto, pega apenas a prieira letra de cada .map
+
+    const nome = vagas.map(function (nomeVaga){
+        return nomeVaga.nome[i]
+    })
+    const descricao = vagas.map(function (descricaoVaga){
+        return descricaoVaga.nome[i]
+    })
+    const tempo = vagas.map(function (tempoVaga){
+        return tempoVaga.nome[i]
+    })
+
+    alert("Nome da vaga: " + nome + ";" + 
+        "\nDescrição: " + descricao + ";" +
+        "\nData Limite de Inscrição: " + tempo
+    )
+
 }
 
 
@@ -76,8 +93,8 @@ do {
             criarVaga()
             break
         case "3":
-            const indice = parseFloat(prompt("Qual o numero da vaga?"))
-            visualizarVaga(indice)
+            const i = parseFloat(prompt("Qual o numero da vaga?"))
+            visualizarVaga(i)
             break
         case "4":
 
