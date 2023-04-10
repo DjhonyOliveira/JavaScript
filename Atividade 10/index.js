@@ -1,29 +1,50 @@
-let candidatos = []
+let candidatosVagas = []
 let vagas =[]
 
 
-function criarVaga(){
+function criarVaga() {
     let nomeVaga = prompt("Qual o nome da vaga?")
     let descricaoVaga = prompt("Descrição da Vaga:")
     let dataLimite = prompt("Qual a data máxima da vaga?")
 
-    confirm(
+    let confirmacao = confirm(
         'Você confirma os seguintes dados?\n' +
         '\nNome da Vaga: ' + nomeVaga +
         '\nDescrição da Vaga: ' + descricaoVaga +
         '\nData Limite de Inscrição: ' + dataLimite
     )
 
-    var vagaCriada = {}
 
+    var vagaCriada = {}
     vagaCriada.nome = nomeVaga
     vagaCriada.descricao = descricaoVaga
     vagaCriada.data = dataLimite
 
-    vagas.push(vagaCriada)
+    for (i = -1 ; i < vagas.length; i++) {
+        vagaCriada.indice = i + 1
+    }
+    
+    if (confirmacao) {
+        vagas.push(vagaCriada)      
+    }
+          
 }
 
+function listasVagas() {
+    const nomeVagas = vagas.map(function(nomeVaga){
+        return nomeVaga.nome
+    })
 
+    
+    for(i = 0; i < nomeVagas.length; i++) {
+        alert(i + 1 + ")" + 
+        "\nVaga de: " + nomeVagas[i])       
+    }
+}
+
+function visualizarVaga(i) {
+    // const
+}
 
 
 
@@ -49,13 +70,14 @@ do {
 
     switch (menu) {
         case "1":
-
+            listasVagas()
             break
         case "2":
             criarVaga()
             break
         case "3":
-
+            const indice = parseFloat(prompt("Qual o numero da vaga?"))
+            visualizarVaga(indice)
             break
         case "4":
 
