@@ -1,79 +1,91 @@
 let candidatosVagas = []
-let vagas =[]
+let vagas = []
 
 
 function criarVaga() {
+    // informações para cadastro da vaga
     let nomeVaga = prompt("Qual o nome da vaga?")
     let descricaoVaga = prompt("Descrição da Vaga:")
     let dataLimite = prompt("Qual a data máxima da vaga?")
-
+    // confirmação dos dados
     let confirmacao = confirm(
         'Você confirma os seguintes dados?\n' +
         '\nNome da Vaga: ' + nomeVaga +
         '\nDescrição da Vaga: ' + descricaoVaga +
         '\nData Limite de Inscrição: ' + dataLimite
     )
-
-
+    // objeto separando cada vaga criada
     var vagaCriada = {}
+
+    for (i = -1 ; i < vagas.length; i++) {
+        vagaCriada.indice = i + 2
+    }
     vagaCriada.nome = nomeVaga
     vagaCriada.descricao = descricaoVaga
     vagaCriada.data = dataLimite
 
-    for (i = -1 ; i < vagas.length; i++) {
-        vagaCriada.indice = i + 1
-    }
-    
+    // validação de push para array "vagas" com a confirmação dos dados criados       
     if (confirmacao) {
         vagas.push(vagaCriada)      
-    }
+    } 
           
 }
 
 function listasVagas() {
+    // definição das variaveis usadas para retornar informação de vaga
     const nomeVagas = vagas.map(function(nomeVaga){
         return nomeVaga.nome
     })
 
-    
+    const indiceVaga = vagas.map(function(i){
+        return i.indice
+    })
+
+    // apresentação das vagas individuais por alert
     for(i = 0; i < nomeVagas.length; i++) {
-        alert(i + 1 + ")" + 
-        "\nVaga de: " + nomeVagas[i])       
+        alert(indiceVaga[i] + ")" + " Vaga de: " + nomeVagas[i]) 
+              
     }
 }
 
-function visualizarVaga(i) {
+function visualizarVaga() {
 
-    // revalidar, esta pegando incoreto, pega apenas a prieira letra de cada .map
+    let i = parseFloat(prompt("Qual o numero da vaga?"))
+    i = i - 1
 
-    const nome = vagas.map(function (nomeVaga){
-        return nomeVaga.nome[i]
-    })
-    const descricao = vagas.map(function (descricaoVaga){
-        return descricaoVaga.nome[i]
-    })
-    const tempo = vagas.map(function (tempoVaga){
-        return tempoVaga.nome[i]
-    })
-
-    alert("Nome da vaga: " + nome + ";" + 
-        "\nDescrição: " + descricao + ";" +
-        "\nData Limite de Inscrição: " + tempo
+    alert("Nome da vaga: " + vagas[i].nome + ";" + 
+        "\nDescrição: " + vagas[i].descricao + ";" +
+        "\nData Limite de Inscrição: " + vagas[i].data
     )
 
 }
 
+function cadastrarPessoa() {
+    const nomeCanditato = prompt("Qual o nome do candidato a vaga?")
+    let i = parseFloat("Qual o numero da vaga?")
+    i = i - 1
 
 
+    const confirmInscricao = confirm(
+        'Você confirma a inscrição de ' + nomeCanditato +
+        '\nNa vaga de: ' + vagas[i].nome +
+        '\n' + vagas[i].descricao + '\n' +
+        '\nCom o prazo final de inscrição para: ' + vagas[i].data
+    )
 
+    let inscritoVaga = {}
+    inscritoVaga.nome = nomeCanditato
+    inscritoVaga.nomeDaVaga = vagas[i].nome
 
-
-
+    if (confirmInscricao) {
+        candidatosVagas.push(inscritoVaga)
+    }
+}
 
 let menu = ""
 
 do {
-
+    // menu interativo do sistema
     menu = prompt(
         'Bem vindo a seleção de vagas!!' +
         '\nA seguir escolha uma das opções para dar sequencia:\n' +
@@ -84,7 +96,7 @@ do {
         '\nExcluir vaga, opção(5);' +
         '\nSair, opção(6)'
     )
-
+        // validação de opção numérica retornada no menu e busca das funções
     switch (menu) {
         case "1":
             listasVagas()
@@ -93,11 +105,10 @@ do {
             criarVaga()
             break
         case "3":
-            const i = parseFloat(prompt("Qual o numero da vaga?"))
-            visualizarVaga(i)
+            visualizarVaga()
             break
         case "4":
-
+            cadastrarPessoa()
             break
         case "5":
 
