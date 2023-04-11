@@ -17,9 +17,6 @@ function criarVaga() {
     // objeto separando cada vaga criada
     var vagaCriada = {}
 
-    for (i = -1 ; i < vagas.length; i++) {
-        vagaCriada.indice = i + 2
-    }
     vagaCriada.nome = nomeVaga
     vagaCriada.descricao = descricaoVaga
     vagaCriada.data = dataLimite
@@ -37,13 +34,16 @@ function listasVagas() {
         return nomeVaga.nome
     })
 
-    const indiceVaga = vagas.map(function(i){
-        return i.indice
-    })
-
     // apresentação das vagas individuais por alert
     for(i = 0; i < nomeVagas.length; i++) {
-        alert(indiceVaga[i] + ")" + " Vaga de: " + nomeVagas[i]) 
+
+        const quantiIsnc = candidatosVagas.filter(function (quantidade) {
+            return quantidade.nomeDaVaga === nomeVagas[i]
+        })
+
+        alert(i + 1 + ")" + " Vaga de: " + nomeVagas[i] +
+            '\nQuantidade de candidatos inscritos: ' + quantiIsnc.length
+        ) 
               
     }
 }
@@ -53,16 +53,18 @@ function visualizarVaga() {
     let i = parseFloat(prompt("Qual o numero da vaga?"))
     i = i - 1
 
+
     alert("Nome da vaga: " + vagas[i].nome + ";" + 
         "\nDescrição: " + vagas[i].descricao + ";" +
-        "\nData Limite de Inscrição: " + vagas[i].data
+        "\nData Limite de Inscrição: " + vagas[i].data + '\n' +
+        '\nQuantidade de pessoa inscritas: ' + quantiIsnc.length
     )
 
 }
 
 function cadastrarPessoa() {
     const nomeCanditato = prompt("Qual o nome do candidato a vaga?")
-    let i = parseFloat("Qual o numero da vaga?")
+    let i = parseFloat(prompt("Qual o numero da vaga?"))
     i = i - 1
 
 
