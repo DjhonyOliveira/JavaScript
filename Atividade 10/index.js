@@ -53,11 +53,17 @@ function visualizarVaga() {
     let i = parseFloat(prompt("Qual o numero da vaga?"))
     i = i - 1
 
+    const vagaSelecionada = vagas[i].nome
+
+    const quantIsnc = candidatosVagas.filter(function (candidato) {
+        return candidato.nomeDaVaga === vagaSelecionada
+    })
 
     alert("Nome da vaga: " + vagas[i].nome + ";" + 
         "\nDescrição: " + vagas[i].descricao + ";" +
         "\nData Limite de Inscrição: " + vagas[i].data + '\n' +
-        '\nQuantidade de pessoa inscritas: ' + quantiIsnc.length
+        '\nQuantidade de pessoa inscritas: ' + quantIsnc.length + 
+        '\nSendo os Inscritos: ' + quantIsnc.nome
     )
 
 }
