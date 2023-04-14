@@ -1,7 +1,7 @@
 let candidatosVagas = []
 let vagas = []
 
-
+// Cadastrar vaga em sistema
 function criarVaga() {
     // informações para cadastro da vaga
     let nomeVaga = prompt("Qual o nome da vaga?")
@@ -28,6 +28,7 @@ function criarVaga() {
           
 }
 
+// Listas todas as vagas
 function listasVagas() {
     // definição das variaveis usadas para retornar informação de vaga
     const nomeVagas = vagas.map(function(nomeVaga){
@@ -41,13 +42,14 @@ function listasVagas() {
             return quantidade.nomeDaVaga === nomeVagas[i]
         })
 
-        alert(i + 1 + ")" + " Vaga de: " + nomeVagas[i] +
+        alert(i + 1 + ')' + ' Vaga de: ' + nomeVagas[i] +
             '\nQuantidade de candidatos inscritos: ' + quantiIsnc.length
         ) 
               
     }
 }
 
+// Visualizar Vaga Individual selecionada pelo usuário
 function visualizarVaga() {
 
     let i = parseFloat(prompt("Qual o numero da vaga?"))
@@ -59,15 +61,18 @@ function visualizarVaga() {
         return candidato.nomeDaVaga === vagaSelecionada
     })
 
-    alert("Nome da vaga: " + vagas[i].nome + ";" + 
-        "\nDescrição: " + vagas[i].descricao + ";" +
-        "\nData Limite de Inscrição: " + vagas[i].data + '\n' +
+    
+
+    alert('Nome da vaga: ' + vagas[i].nome + ";" + 
+        '\nDescrição: ' + vagas[i].descricao + ";" +
+        '\nData Limite de Inscrição: ' + vagas[i].data + '\n' +
         '\nQuantidade de pessoa inscritas: ' + quantIsnc.length + 
-        '\nSendo os Inscritos: ' + quantIsnc.nome
+        '\nSendo os Inscritos: ' +  vagaUsuario
     )
 
 }
 
+// Cadastro de pessoa
 function cadastrarPessoa() {
     const nomeCanditato = prompt("Qual o nome do candidato a vaga?")
     let i = parseFloat(prompt("Qual o numero da vaga?"))
@@ -104,7 +109,8 @@ do {
         '\nExcluir vaga, opção(5);' +
         '\nSair, opção(6)'
     )
-        // validação de opção numérica retornada no menu e busca das funções
+
+    // validação de opção numérica retornada no menu e busca das funções
     switch (menu) {
         case "1":
             listasVagas()
